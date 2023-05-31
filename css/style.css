@@ -88,3 +88,38 @@ header {
     border-radius: 20px;
     text-decoration: none;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid orange;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .grid-item a {
+    background-color: orange;
+    color: white;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .grid-item img {
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 200px;
+    width: 250px;
+    height: auto;
+  }
+  
+  .grid-item p {
+    margin-top: 10px;
+  }
+  
