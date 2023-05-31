@@ -111,6 +111,12 @@ header {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
   
   .grid-item {
     width: 160px;
