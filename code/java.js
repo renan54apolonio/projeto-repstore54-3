@@ -42,15 +42,16 @@ slider.addEventListener('touchmove', (e) => {
     const walk = (x - startX) * 3; // Adjust scrolling speed here
     slider.scrollLeft = scrollLeft - walk;
 });
+
 const slider2 = document.querySelector('.slider2');
 let isDown2 = false;
 let startX2;
-
+let scrollLeft2;
 
 slider2.addEventListener('mousedown', (e) => {
     isDown2 = true;
     startX2 = e.pageX - slider2.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+    scrollLeft2 = slider2.scrollLeft;
 });
 
 slider2.addEventListener('mouseleave', () => {
@@ -64,16 +65,16 @@ slider2.addEventListener('mouseup', () => {
 slider2.addEventListener('mousemove', (e) => {
     if (!isDown2) return;
     e.preventDefault();
-    const x2 = e.pageX - slider2.offsetLeft;
-    const walk2 = (x2 - startX2) * 3; // Adjust scrolling speed here
-    slider2.scrollLeft = scrollLeft - walk2;
+    const x = e.pageX - slider2.offsetLeft;
+    const walk = (x - startX2) * 3; // Adjust scrolling speed here
+    slider2.scrollLeft = scrollLeft2 - walk;
 });
 
 // Touch Events for Mobile Devices
 slider2.addEventListener('touchstart', (e) => {
     isDown2 = true;
     startX2 = e.touches[0].clientX - slider2.offsetLeft;
-    scrollLeft = slider2.scrollLeft;
+    scrollLeft2 = slider2.scrollLeft;
 });
 
 slider2.addEventListener('touchend', () => {
@@ -82,7 +83,7 @@ slider2.addEventListener('touchend', () => {
 
 slider2.addEventListener('touchmove', (e) => {
     if (!isDown2) return;
-    const x2 = e.touches[0].clientX - slider2.offsetLeft;
-    const walk2 = (x2 - startX2) * 3; // Adjust scrolling speed here
-    slider2.scrollLeft = scrollLeft - walk2;
+    const x = e.touches[0].clientX - slider2.offsetLeft;
+    const walk = (x - startX2) * 3; // Adjust scrolling speed here
+    slider2.scrollLeft = scrollLeft2 - walk;
 });
