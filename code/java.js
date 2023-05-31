@@ -72,7 +72,7 @@ slider2.addEventListener('mousemove', (e) => {
 // Touch Events for Mobile Devices
 slider2.addEventListener('touchstart', (e) => {
     isDown2 = true;
-    startX2 = e.touches[0].clientX2 - slider2.offsetLeft;
+    startX2 = e.touches[0].clientX - slider2.offsetLeft;
     scrollLeft = slider2.scrollLeft;
 });
 
@@ -82,7 +82,7 @@ slider2.addEventListener('touchend', () => {
 
 slider2.addEventListener('touchmove', (e) => {
     if (!isDown2) return;
-    const x2 = e.touches[0].clientX2 - slider2.offsetLeft;
+    const x2 = e.touches[0].clientX - slider2.offsetLeft;
     const walk2 = (x2 - startX2) * 3; // Adjust scrolling speed here
     slider2.scrollLeft = scrollLeft - walk2;
 });
