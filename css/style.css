@@ -94,17 +94,25 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
+
+  /* Adicione a media query para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
   
   .grid-item {
-    background-color: orange;
+    width: 160px;
+    background-color: purple;
     border-radius: 10px;
-    border: 2px solid orange;
+    border: 2px solid purple;
     margin-top: 10px;
     text-align: center;
   }
   
   .grid-item a {
-    background-color: orange;
+    background-color: purple;
     color: white;
     display: block;
     text-decoration: none;
@@ -114,8 +122,8 @@ header {
   .grid-item img {
     margin-top: 10px;
     border-radius: 20px;
-    height: 200px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     height: auto;
   }
   
