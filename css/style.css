@@ -118,32 +118,96 @@ header {
     }
   }
   
-  .grid-item {
+  .preco1 {
     width: 160px;
-    background-color: purple;
+    background-color: lightgreen;
     border-radius: 10px;
-    border: 2px solid purple;
+    border: 2px solid lightgreen;
     margin-top: 10px;
     text-align: center;
   }
   
-  .grid-item a {
-    background-color: purple;
+  .preco1 a {
+    border-radius: 10px;
+    background-color: lightgreen;
     color: white;
     display: block;
     text-decoration: none;
     color: inherit;
   }
   
-  .grid-item img {
+  .preco1 img {
     margin-top: 10px;
     border-radius: 20px;
     height: 145px;
     width: 145px;
-    height: auto;
+    
   }
   
-  .grid-item p {
+  .preco1 p {
+    color: white;
     margin-top: 10px;
   }
+   
+  .preco2 {
+    width: 160px;
+    background-color: blue;
+    border-radius: 10px;
+    border: 2px solid blue;
+    margin-top: 10px;
+    text-align: center;
+  }
   
+  .preco2 a {
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .preco2 img {
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 145px;
+    width: 145px;
+    
+  }
+  
+  .preco2 p {
+    color: white;
+    margin-top: 10px;
+  }
+
+  
+  .preco3 {
+    width: 160px;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid orange;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .preco3 a {
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .preco3 img {
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 145px;
+    width: 145px;
+    
+  }
+  
+  .preco3 p {
+    color: white;
+    margin-top: 10px;
+  }
