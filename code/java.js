@@ -88,58 +88,57 @@ slider2.addEventListener('touchmove', (e) => {
     slider2.scrollLeft = scrollLeft2 - walk;
 });
 
-// Função para filtrar as divs dos produtos
-function filtrarProdutos() {
-    // Obter os elementos dos botões de categoria e faixa de preço
-    var categorias = document.querySelectorAll('[id^="categoria"]');
-    var precos = document.querySelectorAll('[id^="preco"]');
-    
-    // Obter todas as divs dos produtos
-    var produtos = document.getElementsByClassName('produto');
-    
-    // Percorrer as divs dos produtos e escondê-las
-    for (var i = 0; i < produtos.length; i++) {
-      produtos[i].style.display = 'none';
-    }
-    
-    // Percorrer os botões de categoria e verificar se estão selecionados
-    for (var i = 0; i < categorias.length; i++) {
-      if (categorias[i].classList.contains('selecionado')) {
-        var categoria = categorias[i].id;
-        
-        // Percorrer os botões de faixa de preço e verificar se estão selecionados
-        for (var j = 0; j < precos.length; j++) {
-          if (precos[j].classList.contains('selecionado')) {
-            var preco = precos[j].id;
-            
-            // Percorrer as divs dos produtos e exibir apenas as que correspondem à categoria e faixa de preço selecionadas
-            for (var k = 0; k < produtos.length; k++) {
-              if (produtos[k].classList.contains(categoria) && produtos[k].classList.contains(preco)) {
-                produtos[k].style.display = 'block';
-              }
-            }
-          }
+var activeCategoria = "";
+    var activePreco = "";
+
+    function applyFilters() {
+      var produtos = document.getElementsByClassName('produto');
+
+      for (var i = 0; i < produtos.length; i++) {
+        var produto = produtos[i];
+        var categoria = produto.classList.contains(activeCategoria);
+        var preco = produto.classList.contains(activePreco);
+
+        if ((activeCategoria !== "" && !categoria) || (activePreco !== "" && !preco)) {
+          produto.classList.add('hidden');
+        } else {
+          produto.classList.remove('hidden');
         }
       }
     }
-  }
-  
-  // Adicionar evento de clique aos botões de categoria
-  var categorias = document.querySelectorAll('[id^="categoria"]');
-  for (var i = 0; i < categorias.length; i++) {
-    categorias[i].addEventListener('click', function() {
-      this.classList.toggle('selecionado');
-      filtrarProdutos();
-    });
-  }
-  
-  // Adicionar evento de clique aos botões de faixa de preço
-  var precos = document.querySelectorAll('[id^="preco"]');
-  for (var i = 0; i < precos.length; i++) {
-    precos[i].addEventListener('click', function() {
-      this.classList.toggle('selecionado');
-      filtrarProdutos();
-    });
-  }
-  
-  
+
+    function toggleCategoria(event) {
+      var categoria = event.target.id;
+
+      if (activeCategoria === categoria) {
+        activeCategoria = "";
+      } else {
+        activeCategoria = categoria;
+        activePreco = "";
+      }
+
+      applyFilters();
+    }
+
+    function togglePreco(event) {
+      var preco = event.target.id;
+
+      if (activePreco === preco) {
+        activePreco = "";
+      } else {
+        activePreco = preco;
+        activeCategoria = "";
+      }
+
+      applyFilters();
+    }
+
+    var buttonsCategoria = document.querySelectorAll('[id^="categoria"]');
+    for (var i = 0; i < buttonsCategoria.length; i++) {
+      buttonsCategoria[i].addEventListener('click', toggleCategoria);
+    }
+
+    var buttonsPreco = document.querySelectorAll('[id^="preco"]');
+    for (var i = 0; i < buttonsPreco.length; i++) {
+      buttonsPreco[i].addEventListener('click', togglePreco);
+    }

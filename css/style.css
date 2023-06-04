@@ -104,7 +104,12 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
-
+.produto {
+  display: block;
+}
+.hidden {
+  display: none;
+}
   /* Adicione a media query para dispositivos móveis */
 @media screen and (max-width: 600px) {
     .grid-container {
@@ -208,6 +213,38 @@ header {
   }
   
   .preco3 p {
+    color: white;
+    margin-top: 10px;
+  }
+
+
+  .preco4 {
+    width: 160px;
+    background-color: purple;
+    border-radius: 10px;
+    border: 2px solid purple;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .preco4 a {
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .preco4 img {
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 145px;
+    width: 145px;
+    
+  }
+  
+  .preco4 p {
     color: white;
     margin-top: 10px;
   }
