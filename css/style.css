@@ -82,11 +82,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    width: 100vw;
+    height: 40px;
+    width: 150px;
+    margin: 20px;
     background-color: gray;
     color: white;
-  
+    border-radius: 20px;
     text-decoration: none;
 }
 .button2 {
