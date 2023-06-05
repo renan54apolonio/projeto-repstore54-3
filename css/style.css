@@ -86,6 +86,71 @@ header {
     width: 100vw;
     background-color: gray;
     color: white;
+  
+    text-decoration: none;
+}
+.button2 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#preco1 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: lightgreen;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#preco2 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#preco3 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: orange;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#preco4 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: purple;
+    color: white;
     border-radius: 20px;
     text-decoration: none;
 }
