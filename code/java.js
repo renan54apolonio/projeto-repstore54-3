@@ -21,7 +21,7 @@ slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3; // Adjust scrolling speed here
+    const walk = (x - startX) * 0.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -39,7 +39,7 @@ slider.addEventListener('touchend', () => {
 slider.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const x = e.touches[0].clientX - slider.offsetLeft;
-    const walk = (x - startX) * 3; // Adjust scrolling speed here
+    const walk = (x - startX) * 0.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -66,7 +66,7 @@ slider2.addEventListener('mousemove', (e) => {
     if (!isDown2) return;
     e.preventDefault();
     const x = e.pageX - slider2.offsetLeft;
-    const walk = (x - startX2) * 3; // Adjust scrolling speed here
+    const walk = (x - startX2) * 0.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider2.scrollLeft = scrollLeft2 - walk;
 });
 
@@ -84,7 +84,7 @@ slider2.addEventListener('touchend', () => {
 slider2.addEventListener('touchmove', (e) => {
     if (!isDown2) return;
     const x = e.touches[0].clientX - slider2.offsetLeft;
-    const walk = (x - startX2) * 3; // Adjust scrolling speed here
+    const walk = (x - startX2) * 0.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider2.scrollLeft = scrollLeft2 - walk;
 });
 
