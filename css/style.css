@@ -173,6 +173,10 @@ header {
 .show {
   display: block;
 }
+.destacado {
+  background-color: yellow;
+}
+
 .hidden {
   display: none;
 }
