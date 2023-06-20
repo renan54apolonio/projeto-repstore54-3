@@ -6,7 +6,7 @@ body {
 
 header {
     margin-bottom: 10px;
-    height: 150px;
+    height: 130px;
     background-color: blue;
 }
 
@@ -156,7 +156,7 @@ header {
     text-decoration: none;
 }
 
-.mastergrid{ 
+.mastergrid{  margin-bottom: 50px;
     display: flex;
     max-width: 1400px;
     align-items: center;

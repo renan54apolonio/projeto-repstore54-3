@@ -21,7 +21,7 @@ slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.2; // Ajuste a sensibilidade alterando o multiplicador (0.5)
+    const walk = (x - startX) * 1.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -39,7 +39,7 @@ slider.addEventListener('touchend', () => {
 slider.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const x = e.touches[0].clientX - slider.offsetLeft;
-    const walk = (x - startX) * 1.2; // Ajuste a sensibilidade alterando o multiplicador (0.5)
+    const walk = (x - startX) * 1.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
