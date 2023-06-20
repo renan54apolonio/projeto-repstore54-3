@@ -323,7 +323,7 @@ header {
   .slideshow {
     align-items: center;
     border-radius: 10px;
-    width: 380px;
+    max-width: 300px;
     height: 200px;
     margin: auto;
     border: 1px solid black;
@@ -357,13 +357,13 @@ header {
   .slideshow-pagination span {
     width: 10px;
     height: 10px;
-    background-color: gray;
+    background-color: white;
     margin: 0 5px;
     border-radius: 50%;
     cursor: pointer;
   }
   
   .slideshow-pagination span.active {
-    background-color: black;
+    background-color: orange;
   }
   
