@@ -5,7 +5,7 @@ body {
 }
 
 header {
-
+    margin-bottom: 10px;
     height: 150px;
     background-color: blue;
 }
@@ -323,9 +323,9 @@ header {
   .slideshow {
     align-items: center;
     border-radius: 10px;
-    width: 460px;
+    width: 380px;
     height: 200px;
-    margin: 10px;
+    margin: auto;
     border: 1px solid black;
     background-color: yellow;
     position: relative;
@@ -333,6 +333,7 @@ header {
   }
   
   .slideshow img {
+    
     padding-top: 10px;
     margin: auto;
     border-radius: 15px;
