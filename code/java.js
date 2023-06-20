@@ -161,4 +161,51 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  
+  const slideshow = document.querySelector('.slideshow');
+const images = slideshow.querySelectorAll('img');
+const pagination = slideshow.querySelector('.slideshow-pagination');
+const paginationItems = [];
+
+// Criando os marcadores de paginação
+for (let i = 0; i < images.length; i++) {
+  const span = document.createElement('span');
+  pagination.appendChild(span);
+  paginationItems.push(span);
+}
+
+let currentIndex = 0;
+
+function showImage(index) {
+  if (index < 0 || index >= images.length) {
+    return;
+  }
+
+  // Atualiza a classe 'active' nas imagens
+  images.forEach((image, i) => {
+    if (i === index) {
+      image.classList.add('active');
+    } else {
+      image.classList.remove('active');
+    }
+  });
+
+  // Atualiza a classe 'active' nos marcadores de paginação
+  paginationItems.forEach((item, i) => {
+    if (i === index) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+function nextImage() {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  showImage(currentIndex);
+}
+
+// Configura a transição automática a cada 3 segundos
+setInterval(nextImage, 3000);
