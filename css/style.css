@@ -4,6 +4,13 @@ body {
     padding: 0;
 }
 
+:root {
+  --verde: #04B958;
+  --azul: #159CDF;
+  --roxo: #801BBF;
+  --laranja: #DE782C;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -168,7 +175,7 @@ header h1 {
     height: 40px;
     width: 200px;
     margin: 20px;
-    background-color: lightgreen;
+    background-color: var(--verde);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -181,7 +188,7 @@ header h1 {
     height: 40px;
     width: 200px;
     margin: 20px;
-    background-color: blue;
+    background-color: var(--azul);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -194,7 +201,7 @@ header h1 {
     height: 40px;
     width: 200px;
     margin: 20px;
-    background-color: orange;
+    background-color: var(--roxo);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -207,7 +214,7 @@ header h1 {
     height: 40px;
     width: 200px;
     margin: 20px;
-    background-color: purple;
+    background-color: var(--laranja);
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -252,16 +259,16 @@ header h1 {
   
   .preco1 {
     width: 160px;
-    background-color: lightgreen;
+    background-color: var(--verde);
     border-radius: 10px;
-    border: 2px solid lightgreen;
+    border: 2px solid var(--verde);
     margin-top: 10px;
     text-align: center;
   }
   
   .preco1 a {
     border-radius: 10px;
-    background-color: lightgreen;
+    background-color: var(--verde);
     color: white;
     display: block;
     text-decoration: none;
@@ -283,16 +290,16 @@ header h1 {
    
   .preco2 {
     width: 160px;
-    background-color: blue;
+    background-color: var(--azul);
     border-radius: 10px;
-    border: 2px solid blue;
+    border: 2px solid var(--azul);
     margin-top: 10px;
     text-align: center;
   }
   
   .preco2 a {
     border-radius: 10px;
-    background-color: blue;
+    background-color: var(--azul);
     color: white;
     display: block;
     text-decoration: none;
@@ -315,16 +322,16 @@ header h1 {
   
   .preco3 {
     width: 160px;
-    background-color: orange;
+    background-color: var(--roxo);
     border-radius: 10px;
-    border: 2px solid orange;
+    border: 2px solid var(--roxo);
     margin-top: 10px;
     text-align: center;
   }
   
   .preco3 a {
     border-radius: 10px;
-    background-color: orange;
+    background-color: var(--roxo);
     color: white;
     display: block;
     text-decoration: none;
@@ -347,16 +354,16 @@ header h1 {
 
   .preco4 {
     width: 160px;
-    background-color: purple;
+    background-color: var(--laranja);
     border-radius: 10px;
-    border: 2px solid purple;
+    border: 2px solid var(--laranja);
     margin-top: 10px;
     text-align: center;
   }
   
   .preco4 a {
     border-radius: 10px;
-    background-color: purple;
+    background-color: var(--laranja);
     color: white;
     display: block;
     text-decoration: none;
