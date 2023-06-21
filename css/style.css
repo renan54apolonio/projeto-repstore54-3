@@ -28,7 +28,7 @@ header h1 {
   background: linear-gradient(90deg, #FFFE02, #9B4D0D, #FFFE02, #FDFCF9, #F7FA03);
   position: relative;
   overflow: hidden;
-  box-shadow: #B2A702;
+  box-shadow: 0px 4px 6px #FDFCF9;
 }
 
 .slideshow img {

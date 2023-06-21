@@ -215,3 +215,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(nextImage, 3000);
   }, 5000);
   
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const targetId = event.target.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth"
+      });
+    }
+  }
+
+  // Adiciona o evento de clique aos links
+  const footerLinks = document.querySelectorAll(".footer-link");
+  footerLinks.forEach(link => {
+    link.addEventListener("click", scrollToSection);
+  });
