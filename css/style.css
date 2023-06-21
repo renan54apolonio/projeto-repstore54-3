@@ -25,7 +25,7 @@ header h1 {
   height: 200px;
   margin: auto;
   border: 1px solid black;
-  background: linear-gradient(90deg, #FFFE02, #B2A702, #FFFE02, #FEFE89, #F7FA03);
+  background: linear-gradient(90deg, #FFFE02, #9B4D0D, #FFFE02, #FDFCF9, #F7FA03);
   position: relative;
   overflow: hidden;
   box-shadow: #B2A702;
