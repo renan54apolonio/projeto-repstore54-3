@@ -244,18 +244,7 @@ header h1 {
 .hidden {
   display: none;
 }
-  /* Adicione a media query para dispositivos móveis */
-@media screen and (max-width: 600px) {
-    .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media screen and (min-width: 1000px) {
-    .grid-container {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+ 
   
   .preco1 {
     width: 160px;
@@ -437,3 +426,32 @@ header h1 {
     text-decoration: underline;
   }
   
+
+   /* Adicione a media query para dispositivos móveis */
+@media screen and (max-width: 650px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .button {
+      width: 100px;
+    }
+    .slider2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @media screen and (min-width: 651px) and (max-width: 999px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .button {
+      width: 100px;
+    }
+  }
