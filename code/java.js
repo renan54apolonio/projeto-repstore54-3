@@ -233,3 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
   footerLinks.forEach(link => {
     link.addEventListener("click", scrollToSection);
   });
+
+
+  
