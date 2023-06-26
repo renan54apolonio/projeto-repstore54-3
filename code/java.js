@@ -259,10 +259,11 @@ specialButton.addEventListener("click", function() {
 var isButtonActive = false; // Variável para controlar o estado do botão
 
 function toggleButton() {
+  var specialButton = document.getElementById("specialButton");
   var mastergridElement = document.getElementsByClassName("mastergrid")[0];
   var produto18Element = document.getElementById("produto18");
   var buttonElements = document.querySelectorAll(".button, .button2");
-  var button2Elements = document.getElementsByClassName("button2");
+  var slider2Element = document.getElementsByClassName("slider2")[0];
 
   if (!isButtonActive) {
     mastergridElement.classList.add("hidden");
@@ -270,9 +271,8 @@ function toggleButton() {
     for (var i = 0; i < buttonElements.length; i++) {
       buttonElements[i].classList.add("hidden");
     }
-    for (var i = 0; i < button2Elements.length; i++) {
-      button2Elements[i].classList.add("hidden-button");
-    }
+    slider2Element.setAttribute("id", "hidden");
+    specialButton.classList.add("button-red");
     isButtonActive = true;
   } else {
     mastergridElement.classList.remove("hidden");
@@ -280,9 +280,8 @@ function toggleButton() {
     for (var i = 0; i < buttonElements.length; i++) {
       buttonElements[i].classList.remove("hidden");
     }
-    for (var i = 0; i < button2Elements.length; i++) {
-      button2Elements[i].classList.remove("hidden-button");
-    }
+    slider2Element.removeAttribute("id");
+    specialButton.classList.remove("button-red");
     isButtonActive = false;
   }
 }

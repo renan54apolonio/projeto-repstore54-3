@@ -286,6 +286,9 @@ header h1 {
 .hidden {
   display: none;
 }
+#hidden {
+  display: none;
+}
  
   
   .preco1 {
