@@ -235,4 +235,58 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  
+  // Função para exibir o alerta
+function exibirAlerta() {
+  var confirmar = confirm(" Texto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alerta");
+
+  // Se o usuário pressionou o botão de confirmar, definimos a variável para indicar que o alerta não deve ser exibido novamente
+  if (confirmar) {
+    alertaExibido = true;
+  }
+}
+
+// Verificar se o alerta já foi exibido antes
+var alertaExibido = false;
+
+// Verificar se o botão foi pressionado e o alerta ainda não foi exibido
+var specialButton = document.getElementById("specialButton");
+specialButton.addEventListener("click", function() {
+  if (!alertaExibido) {
+    exibirAlerta();
+  }
+});
+
+var isButtonActive = false; // Variável para controlar o estado do botão
+
+function toggleButton() {
+  var mastergridElement = document.getElementsByClassName("mastergrid")[0];
+  var produto18Element = document.getElementById("produto18");
+  var buttonElements = document.querySelectorAll(".button, .button2");
+  var button2Elements = document.getElementsByClassName("button2");
+
+  if (!isButtonActive) {
+    mastergridElement.classList.add("hidden");
+    produto18Element.classList.remove("hidden");
+    for (var i = 0; i < buttonElements.length; i++) {
+      buttonElements[i].classList.add("hidden");
+    }
+    for (var i = 0; i < button2Elements.length; i++) {
+      button2Elements[i].classList.add("hidden-button");
+    }
+    isButtonActive = true;
+  } else {
+    mastergridElement.classList.remove("hidden");
+    produto18Element.classList.add("hidden");
+    for (var i = 0; i < buttonElements.length; i++) {
+      buttonElements[i].classList.remove("hidden");
+    }
+    for (var i = 0; i < button2Elements.length; i++) {
+      button2Elements[i].classList.remove("hidden-button");
+    }
+    isButtonActive = false;
+  }
+}
+
+var specialButton = document.getElementById("specialButton");
+specialButton.addEventListener("click", toggleButton);
+
