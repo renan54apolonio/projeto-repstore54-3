@@ -21,7 +21,7 @@ slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
+    const walk = (x - startX) * 1.8; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -39,7 +39,7 @@ slider.addEventListener('touchend', () => {
 slider.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const x = e.touches[0].clientX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5; // Ajuste a sensibilidade alterando o multiplicador (0.5)
+    const walk = (x - startX) * 1.8; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
 });
 
@@ -235,57 +235,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  // Função para exibir o alerta
-function exibirAlerta() {
-  var confirmar = confirm(" Texto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alertaTexto do alerta");
-
-  // Se o usuário pressionou o botão de confirmar, definimos a variável para indicar que o alerta não deve ser exibido novamente
-  if (confirmar) {
-    alertaExibido = true;
+  var isButtonActive = false; // Variável para controlar o estado do botão
+  var isAlertShown = false; // Variável para controlar se a mensagem de alerta já foi exibida
+  
+  function showAlert() {
+    if (!isAlertShown) {
+      var confirmation = confirm("Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?Deseja prosseguir com a ação?");
+      
+      if (confirmation) {
+        toggleButton();
+        isAlertShown = true;
+      }
+    } else {
+      toggleButton();
+    }
   }
-}
-
-// Verificar se o alerta já foi exibido antes
-var alertaExibido = false;
-
-// Verificar se o botão foi pressionado e o alerta ainda não foi exibido
-var specialButton = document.getElementById("specialButton");
-specialButton.addEventListener("click", function() {
-  if (!alertaExibido) {
-    exibirAlerta();
+  
+  function toggleButton() {
+    var specialButton = document.getElementById("specialButton");
+    var mastergridElement = document.getElementsByClassName("mastergrid")[0];
+    var produto18Element = document.getElementById("produto18");
+    var buttonElements = document.querySelectorAll(".button, .button2");
+    var slider2Element = document.getElementsByClassName("slider2")[0];
+  
+    if (!isButtonActive) {
+      mastergridElement.classList.add("hidden");
+      produto18Element.classList.remove("hidden");
+      for (var i = 0; i < buttonElements.length; i++) {
+        buttonElements[i].classList.add("hidden");
+      }
+      slider2Element.setAttribute("id", "hidden");
+      specialButton.classList.add("button-red");
+      isButtonActive = true;
+    } else {
+      mastergridElement.classList.remove("hidden");
+      produto18Element.classList.add("hidden");
+      for (var i = 0; i < buttonElements.length; i++) {
+        buttonElements[i].classList.remove("hidden");
+      }
+      slider2Element.removeAttribute("id");
+      specialButton.classList.remove("button-red");
+      isButtonActive = false;
+    }
   }
-});
-
-var isButtonActive = false; // Variável para controlar o estado do botão
-
-function toggleButton() {
+  
   var specialButton = document.getElementById("specialButton");
-  var mastergridElement = document.getElementsByClassName("mastergrid")[0];
-  var produto18Element = document.getElementById("produto18");
-  var buttonElements = document.querySelectorAll(".button, .button2");
-  var slider2Element = document.getElementsByClassName("slider2")[0];
-
-  if (!isButtonActive) {
-    mastergridElement.classList.add("hidden");
-    produto18Element.classList.remove("hidden");
-    for (var i = 0; i < buttonElements.length; i++) {
-      buttonElements[i].classList.add("hidden");
-    }
-    slider2Element.setAttribute("id", "hidden");
-    specialButton.classList.add("button-red");
-    isButtonActive = true;
-  } else {
-    mastergridElement.classList.remove("hidden");
-    produto18Element.classList.add("hidden");
-    for (var i = 0; i < buttonElements.length; i++) {
-      buttonElements[i].classList.remove("hidden");
-    }
-    slider2Element.removeAttribute("id");
-    specialButton.classList.remove("button-red");
-    isButtonActive = false;
-  }
-}
-
-var specialButton = document.getElementById("specialButton");
-specialButton.addEventListener("click", toggleButton);
-
+  specialButton.addEventListener("click", showAlert);
+  
