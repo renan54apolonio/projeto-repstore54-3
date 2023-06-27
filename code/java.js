@@ -41,52 +41,7 @@ slider.addEventListener('touchmove', (e) => {
     const x = e.touches[0].clientX - slider.offsetLeft;
     const walk = (x - startX) * 1.8; // Ajuste a sensibilidade alterando o multiplicador (0.5)
     slider.scrollLeft = scrollLeft - walk;
-});
-
-const slider2 = document.querySelector('.slider2');
-let isDown2 = false;
-let startX2;
-let scrollLeft2;
-
-slider2.addEventListener('mousedown', (e) => {
-    isDown2 = true;
-    startX2 = e.pageX - slider2.offsetLeft;
-    scrollLeft2 = slider2.scrollLeft;
-});
-
-slider2.addEventListener('mouseleave', () => {
-    isDown2 = false;
-});
-
-slider2.addEventListener('mouseup', () => {
-    isDown2 = false;
-});
-
-slider2.addEventListener('mousemove', (e) => {
-    if (!isDown2) return;
-    e.preventDefault();
-    const x = e.pageX - slider2.offsetLeft;
-    const walk = (x - startX2) * 1.2; // Ajuste a sensibilidade alterando o multiplicador (0.5)
-    slider2.scrollLeft = scrollLeft2 - walk;
-});
-
-// Touch Events for Mobile Devices
-slider2.addEventListener('touchstart', (e) => {
-    isDown2 = true;
-    startX2 = e.touches[0].clientX - slider2.offsetLeft;
-    scrollLeft2 = slider2.scrollLeft;
-});
-
-slider2.addEventListener('touchend', () => {
-    isDown2 = false;
-});
-
-slider2.addEventListener('touchmove', (e) => {
-    if (!isDown2) return;
-    const x = e.touches[0].clientX - slider2.offsetLeft;
-    const walk = (x - startX2) * 1.2; // Ajuste a sensibilidade alterando o multiplicador (0.5)
-    slider2.scrollLeft = scrollLeft2 - walk;
-});
+}); 
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -285,3 +240,53 @@ function toggleButton() {
 
 var specialButton = document.getElementById("specialButton");
 specialButton.addEventListener("click", showAlert);
+const slider2 = document.querySelector('.slider2');
+let isDown2 = false;
+let startX2;
+let scrollLeft2;
+
+slider2.addEventListener('mousedown', (e) => {
+    isDown2 = true;
+    startX2 = e.pageX - slider2.offsetLeft;
+    scrollLeft2 = slider2.scrollLeft;
+});
+
+slider2.addEventListener('mouseleave', () => {
+    isDown2 = false;
+});
+
+slider2.addEventListener('mouseup', () => {
+    isDown2 = false;
+});
+
+slider2.addEventListener('mousemove', (e) => {
+    if (!isDown2) return;
+    e.preventDefault();
+    const x = e.pageX - slider2.offsetLeft;
+    const walk = (x - startX2) * 1.2;
+    slider2.scrollLeft = scrollLeft2 - walk;
+});
+
+// Touch Events for Mobile Devices
+slider2.addEventListener('touchstart', (e) => {
+    isDown2 = true;
+    startX2 = e.touches[0].clientX - slider2.offsetLeft;
+    scrollLeft2 = slider2.scrollLeft;
+});
+
+slider2.addEventListener('touchend', () => {
+    isDown2 = false;
+});
+
+slider2.addEventListener('touchmove', (e) => {
+    if (!isDown2) return;
+    const x = e.touches[0].clientX - slider2.offsetLeft;
+    const walk = (x - startX2) * 1.2;
+    slider2.scrollLeft = scrollLeft2 - walk;
+});
+
+// Adicionando suporte para deslizar para a direita
+slider2.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    slider2.scrollLeft += e.deltaY * 5;
+});

@@ -510,9 +510,11 @@ header h1 {
     .grid-container2 {
       grid-template-columns: repeat(2, 1fr);
     }
+    
+  
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 960px) {
     .grid-container {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -522,17 +524,20 @@ header h1 {
     .button {
       width: 100px;
     }
-    }
     .button3 {
       width: 100px;
     }
     .slider2 {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
+    }
+    
+   
+   
   
-  @media screen and (min-width: 651px) and (max-width: 999px) {
+  @media screen and (min-width: 651px) and (max-width: 955px) {
     .grid-container {
       grid-template-columns: repeat(3, 1fr);
     }
